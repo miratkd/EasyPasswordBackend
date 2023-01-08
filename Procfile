@@ -1,0 +1,1 @@
+web: gunicorn easyPassword.wsgi --log-file -

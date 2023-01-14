@@ -92,12 +92,28 @@ WSGI_APPLICATION = 'easyPassword.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ['EASYPGDATABASE'],
+            'HOST': os.environ['EASYPGHOST'],
+            'PORT': os.environ['EASYPGPORT'],
+            'USER': os.environ['EASYPGUSER'],
+            'PASSWORD': os.environ['EASYPGPASSWORD']
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ['PGDATABASE'],
+            'HOST': os.environ['PGHOST'],
+            'PORT': os.environ['PGPORT'],
+            'USER': os.environ['PGUSER'],
+            'PASSWORD': os.environ['PGPASSWORD']
+        }
+    }
 
 
 # Password validation

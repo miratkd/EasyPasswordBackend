@@ -14,3 +14,23 @@ class AccountViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         self.serializer_class = serializers.CreateAccountSerializer
         return super().create(request, *args, **kwargs)
+
+    def retrieve(self, request, pk=None):
+        return Response("Method Not Allowed", status=405)
+
+    def retrieve(self, request, pk=None):
+        return Response("Method Not Allowed", status=405)
+
+    def update(self, request, pk=None):
+        return Response("Method Not Allowed", status=405)
+
+    def partial_update(self, request, pk=None):
+        return Response("Method Not Allowed", status=405)
+
+    @action(detail=False, methods=['get'])
+    def me(self, request):
+        try:
+            account = models.Account.objects.get(user__id=request.user.id)
+        except:
+            return Response(status=404)
+        return Response(data=serializers.AccountSerializer(account).data, status=200)

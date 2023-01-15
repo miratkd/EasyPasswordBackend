@@ -19,5 +19,6 @@ from mainApp import routers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(routers))
+    path('', include(routers)),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]

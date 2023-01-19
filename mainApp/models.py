@@ -15,3 +15,15 @@ class Account(models.Model):
 
     def delete(self, using=None, keep_parents=False):
         self.user.delete()
+
+class Password(models.Model):
+    account = models.ForeignKey(Account, on_delete=models.CASCADE, verbose_name='conta')
+    site = models.CharField(max_length=50, help_text='Limite de 50 characteres.')
+    password = models.CharField(max_length=50, help_text='Limite de 50 characteres.', verbose_name='senha')
+
+    class Meta:
+        verbose_name_plural = "Senhas"
+        verbose_name = "Senha"
+
+    def __str__(self):
+        return self.site + '-' + self.password

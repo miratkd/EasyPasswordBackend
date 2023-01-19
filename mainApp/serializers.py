@@ -36,3 +36,8 @@ class CreateAccountSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(username=user.get('username'), email=user.get('email'),
                                         password=user.get('password'))
         return models.Account.objects.create(user=user)
+
+class PasswordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Password
+        fields = ['site', 'password']

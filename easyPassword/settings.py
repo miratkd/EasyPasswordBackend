@@ -38,6 +38,9 @@ CSRF_TRUSTED_ORIGINS = [
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8080',
+    'http://localhost:8081',
+    'http://192.168.15.14:8080/',
+    'http://192.168.15.14:8081/',
     'https://black-jack-rest.netlify.app',
 )
 

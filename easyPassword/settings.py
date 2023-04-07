@@ -41,7 +41,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8081',
     'http://192.168.15.14:8080/',
     'http://192.168.15.14:8081/',
-    'https://black-jack-rest.netlify.app',
+    'https://easypassword-lm.netlify.app/',
 )
 
 

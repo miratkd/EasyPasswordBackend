@@ -42,6 +42,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://192.168.15.14:8080/',
     'http://192.168.15.14:8081/',
     'https://easypassword-lm.netlify.app/',
+    'https://guu0803.github.io/',
 )
 
 

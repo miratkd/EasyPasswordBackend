@@ -44,7 +44,8 @@ CORS_ORIGIN_WHITELIST = (
     'https://easypassword-lm.netlify.app/',
     'https://guu0803.github.io/',
     'https://space-flix.netlify.app/',
-    'http://192.168.0.183:3000/'
+    'http://192.168.0.183:3000/',
+    'https://easy-password-v2.netlify.app/'
 )
 
 
